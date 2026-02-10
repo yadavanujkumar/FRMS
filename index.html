@@ -45,8 +45,11 @@
                     // NOTE: If XGBoost/SHAP fail to load in browser, we might need to mock them or use a pure python alternative for the demo.
                     // For now, let's try standard installation.
                 ],
-                entrypoint: "app.py",
+                entrypoint: "app_minimal.py",
                 files: {
+                    "app_minimal.py": {
+                        url: "app_minimal.py",
+                    },
                     "app.py": {
                         url: "app.py",
                     },
