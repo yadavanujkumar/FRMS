@@ -25,7 +25,7 @@
                     "plotly",
                     "joblib",
                     // "xgboost", // QC confirmed unused in code. Removed.
-                    "shap"    // SHAP has C extensions, might be flaky but required for explainability tab. 
+                    // "shap"    // SHAP removed for GitHub Pages compatibility (WASM issues).
                     // NOTE: If XGBoost/SHAP fail to load in browser, we might need to mock them or use a pure python alternative for the demo.
                     // For now, let's try standard installation.
                 ],

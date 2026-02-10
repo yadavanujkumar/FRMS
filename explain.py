@@ -1,10 +1,19 @@
-import shap
+try:
+    import shap
+except ImportError:
+    shap = None
+
 import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
 
 class Explainer:
     def __init__(self, model_path='fraud_model.pkl', data_path='transactions_enhanced.csv'):
+        if shap is None:
+            print("SHAP library not found. Explainability will be disabled.")
+            self.explainer = None
+            return
+
         try:
             self.model = joblib.load(model_path)
             # Create a background dataset for SHAP (using a sample)
